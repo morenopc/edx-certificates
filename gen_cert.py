@@ -634,8 +634,9 @@ class CertificateGen(object):
 
         paragraph_string = u"oferecido por <b>{0}</b>" \
                            u", uma iniciativa de <br /><br />aprendizado online " \
-                           u"<b>{1}</b> através da <b>Open edX</b>.".format(
-                               self.org, self.long_org)
+                           # u"<b>{1}</b> através da <b>ESO</b>.".format(
+                           #     self.org, self.long_org)
+                           u"através da <b>ESO</b>.".format(self.org)
 
         paragraph = Paragraph(paragraph_string, styleOpenSansLight)
         paragraph.wrapOn(c, WIDTH * mm, HEIGHT * mm)
