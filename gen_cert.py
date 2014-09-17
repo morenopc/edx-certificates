@@ -642,26 +642,26 @@ class CertificateGen(object):
 
         ###### Honor code
 
-        # styleOpenSansLight.fontSize = 7
-        # styleOpenSansLight.leading = 10
-        # styleOpenSansLight.textColor = colors.Color(
-        #     0.302, 0.306, 0.318)
-        # styleOpenSansLight.alignment = TA_CENTER
+        styleOpenSansLight.fontSize = 7
+        styleOpenSansLight.leading = 10
+        styleOpenSansLight.textColor = colors.Color(
+            0.302, 0.306, 0.318)
+        styleOpenSansLight.alignment = TA_CENTER
 
-        # paragraph_string = "HONOR CODE CERTIFICATE<br/>" \
-        #     "*Authenticity of this certificate can be verified at " \
-        #     "<a href='{verify_url}/{verify_path}/{verify_uuid}'>" \
-        #     "{verify_url}/{verify_path}/{verify_uuid}</a>"
+        paragraph_string = u"CÓDIGO DO CERTIFICADO DE HONRA<br/>" \
+            "*A autenticidade deste certificado pode ser verificado em " \
+            "<a href='{verify_url}/{verify_path}/{verify_uuid}'>" \
+            "{verify_url}/{verify_path}/{verify_uuid}</a>"
 
-        # paragraph_string = paragraph_string.format(
-        #     verify_url=settings.CERT_VERIFY_URL,
-        #     verify_path=S3_VERIFY_PATH,
-        #     verify_uuid=verify_uuid
-        # )
-        # paragraph = Paragraph(paragraph_string, styleOpenSansLight)
+        paragraph_string = paragraph_string.format(
+            verify_url=settings.CERT_VERIFY_URL,
+            verify_path=S3_VERIFY_PATH,
+            verify_uuid=verify_uuid
+        )
+        paragraph = Paragraph(paragraph_string, styleOpenSansLight)
 
-        # paragraph.wrapOn(c, WIDTH * mm, HEIGHT * mm)
-        # paragraph.drawOn(c, 0 * mm, 28 * mm)
+        paragraph.wrapOn(c, WIDTH * mm, HEIGHT * mm)
+        paragraph.drawOn(c, 0 * mm, 28 * mm)
 
         ########
 
