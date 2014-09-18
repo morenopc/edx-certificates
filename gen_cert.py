@@ -1214,7 +1214,7 @@ class CertificateGen(object):
             verify_template = 'v2/verify.html'
 
         # create the validation page
-        signature_download_url = "{verify_url}/{verify_path}/{verify_uuid}/{verify_filename}".format(
+        signature_download_url = "{verify_url}/{verify_path}/{verify_uuid}/{verify_filename}/valid.html".format(
             verify_url=settings.CERT_VERIFY_URL,
             verify_path=S3_VERIFY_PATH,
             verify_uuid=verify_uuid,
