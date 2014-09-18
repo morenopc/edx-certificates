@@ -7,6 +7,7 @@ Settings file for the certificate agent
 import json
 import os
 import yaml
+import gnupg
 
 from logsettings import get_logger_config
 from path import path
@@ -40,8 +41,14 @@ LOGGING = get_logger_config(ENV_ROOT,
 # Default for the gpg dir
 # Specify the CERT_KEY_ID before running the test suite
 CERT_GPG_DIR = '{0}/.gnupg'.format(os.environ['HOME'])
-# dummy key - https://raw.githubusercontent.com/edx/configuration/master/playbooks/roles/certs/files/example-private-key.txt
-CERT_KEY_ID = 'FEF8D954'
+try:
+    # https://pythonhosted.org/python-gnupg/#getting-started
+    gpg = gnupg.GPG(gnupghome=CERT_GPG_DIR)
+    gpg.encoding = 'utf-8'
+    CERT_KEY_ID = gpg.list_keys()[0].get('keyid')
+except Exception, e:
+    # dummy key - https://raw.githubusercontent.com/edx/configuration/master/playbooks/roles/certs/files/example-private-key.txt
+    CERT_KEY_ID = 'FEF8D954'
 
 # Specify these credentials before running the test suite
 # or ensure that your .boto file has write permission
