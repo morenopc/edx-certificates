@@ -650,7 +650,7 @@ class CertificateGen(object):
 
         paragraph_string = u"CÓDIGO DO CERTIFICADO DE HONRA<br/>" \
             "*A autenticidade deste certificado pode ser verificado em " \
-            "<a href='{verify_url}/{verify_path}/{verify_uuid}'>" \
+            "<a href='{verify_url}/{verify_path}/{verify_uuid}/valid.html'>" \
             "{verify_url}/{verify_path}/{verify_uuid}</a>"
 
         paragraph_string = paragraph_string.format(
@@ -1214,7 +1214,7 @@ class CertificateGen(object):
             verify_template = 'v2/verify.html'
 
         # create the validation page
-        signature_download_url = "{verify_url}/{verify_path}/{verify_uuid}/{verify_filename}/valid.html".format(
+        signature_download_url = "{verify_url}/{verify_path}/{verify_uuid}/{verify_filename}".format(
             verify_url=settings.CERT_VERIFY_URL,
             verify_path=S3_VERIFY_PATH,
             verify_uuid=verify_uuid,
