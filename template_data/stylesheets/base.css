@@ -121,7 +121,7 @@ body {
       text-indent: -9999px;
       width: 80px;
       height: 64px;
-      background: url("../images/edx-logo.png") 0 0 no-repeat;
+      background: url("https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/header-logo-eso.png") 0 0 no-repeat;
       margin: 20px auto; }
   body > section {
     margin: 0 auto;
