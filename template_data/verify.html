@@ -2,57 +2,59 @@
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <title>Validate the Certificate</title>
+ <title>Validar o Certificado</title>
  <link rel="stylesheet" href="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/stylesheets/base.css">
 </head>
 <body class="verify">
 
   <header>
-    <h1>edx</h1>
+    <h1>eso</h1>
   </header>
 
   <section>
     <section class="introduction">
       <p>
-        The certificate issued by Edx is signed by a 
-        <a href="http://www.gnupg.org">gpg</a> key so that
-        it can be validated independently by anyone who has
-        the edX public key.  For independent verification edX uses 
-        what is called a "detached signature" 
-        meaning that the signature for the certificate is contained in
-        a separate file with a ".sig" extension.  
+        O certificado emitido pela ESO é assinado por uma
+        chave <a href="http://www.gnupg.org" target="_blank">gpg</a> que pode 
+        ser validado usando a chave pública (public key) da ESO.
+        Para realizar essa validação os estudantes devem
+        usar uma "detached signature" o que quer dizer que 
+        a assinatura dos certificados está em um arquivo separado
+        com extensão ".sig".
       </p>
 
       <p>
-        To complete the verification procedure you will need the following
-        three files:
+        Para realizar o procedimento de validação você precisa de
+        três arquivos:
         <ul>
-          <li>The <a href="http://verify.edx.org/edx.pub">official edX public key</a>.</li>
-          <li>The edX certificate belonging to {NAME} (you should already have this file).</li>
-          <li>The <a href="{SIG_URL}">signature file</a> for {NAME}'s certificate</li>
+          <li>A <a href="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/eso.pub">chave pública oficial da ESO</a>.</li>
+          <li>O certificado ESO com o nome {NAME} (que você tem).</li>
+          <li>O arquivo <a href="{SIG_URL}">da assinatura</a> para o certificado de nome {NAME}</li>
         </ul>
       </p>
 
       <p> 
-        Ensure you have the pdf, the ".sig" signature file and the edX public key 
-        copied to a single directory before you begin.
+        Copie o arquivo pdf ".sig" da assinatura e o aquivo da chave pública da ESO
+        para dentro da mesma pasta.
       </p>
     </section>
 
     <section class="instruction">
       <header>
-        <h1>Import the edX public key on OSX using GPG Keychain</h1>
+        <h1>Importar a chave pública da ESO no (Mac) OSX usando o GPG Keychain</h1>
       </header>
 
       <ul>
-        <li><p>Download and install <a href="http://www.gpgtools.org/installer/index.html">gpgtools</a>.</p></li>
-        <li><p>After installation, GPG Keychain Access will prompt for a new personal keypair.</p>
+        <li><p>Baixe e instale o <a href="http://www.gpgtools.org/installer/index.html">gpgtools</a>.</p></li>
+        <li><p>Depois de instalar, o "GPG Keychain Access" irá requisitar um 
+        novo par de chaves pessoais (new personal keypair).</p>
           <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/osxgpg-new-keypair.png" alt="new keypair" /></p>
         </li>
-        <li><p>Click the import icon to import the public key file edX, <i>edx.pub</i>.</p></li>
-        <li><p>CTRL-click the edX public key and select "sign" to validate it.</p>
+        <li><p>Clique no ícone importar para importar a chave pública da ESO, <i>eso.pub</i>.</p></li>
+        <li><p>Pressione CTRL+clique na chave pública da ESO e selecione "assinar" ("sign") para validá-la.</p>
           <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/osxgpg-sign-key.png" alt="sign key"/></p></li>
-        <li><p>Confirm that the edX public key is listed in the GPG Keychain Access window and it has Short ID 044DA1D9.</p>
+        <li><p>Confirme que a chave pública da ESO está listada dentro da janela
+          do "GPG Keychain Access" e que o seu ID (Short ID) é B9BE75DF.</p>
         <img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/osxgpg-key-list.png" alt="sign key"/></li>
     </ul>
   </section>
@@ -60,34 +62,34 @@
   <section class="instruction">
 
     <header>
-      <h1>Import the edX public key on Microsoft Windows using gpg4win</h1>
+      <h1>Importar a chave pública da ESO no Microsoft Windows usando o gpg4win</h1>
     </header>
 
     <ul>
-      <li><p>Download and install the full version of <a href="http://www.gpg4win.org/download.html">gpg4win</a>.</p></li>
-      <li><p>After the installation is complete, launch Kleapatra from the start menu.</p></li>
-      <li><p>Create a new personal certificate if don't have one listed under "My Certificates". </p>
+      <li><p>Baixe e instale a versão completa do <a href="http://www.gpg4win.org/download.html">gpg4win</a>.</p></li>
+      <li><p>Depois de completar a instalação, abra o Kleopatra no menu iniciar.</p></li>
+      <li><p>Crie um novo certificado pessoal (new personal certificate) caso ainda não tenha um dentro de "Meus Certificados" ("My Certificates"). </p>
         <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/wingpg-new-cert.png" alt="new certificate" /> </p></li>
-      <p>When prompted, select "Create personal OpenPGP key pair."</p>
+      <p>Na caixa que diálogo selecione "Criar par de chaves pessoais OpenPGP" ("Create personal OpenPGP key pair").</p>
       <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/wingpg-new-cert2.png" alt="new certificate" /></p> </li>
-      <li><p>Import the edX public key file, <i>edx.pub</i> for edX by clicking on the "Import Certificate" icon.</p></li>
-    <li><p>Certify the edX public key by highlighting the edx certificate and selecting "Certify Certificate" under the "Certificates" menu.</p>
+      <li><p>Importe a chave pública da ESO, <i>eso.pub</i> clicando no ícone "Importar Certificado" ("Import Certificate").</p></li>
+    <li><p>Certifique-se que a chave pública da ESO é confiável selecionando a chave e clicando em "Certify Certificate" dentro do menu "Certificates".</p>
       <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/wingpg-certify-cert.png" alt="certify certificate" /></p> </li>
-    <li><p>Make sure that the edX public key/certificate is listed under the "Trusted Certificates" tab and verify it has the Key-ID 044DA1D9.</p>
+    <li><p>Verifique se a chave pública da ESO foi listada na aba "Certificados Confiáveis" ("Trusted Certificates") e verifique se o Key-ID é B9BE75DF.</p>
       <p><img class="ss" src="https://s3-sa-east-1.amazonaws.com/eso-edx-certificates/images/wingpg-verify-cert.png" alt="verify the certificate" /></p> </li>
   </ul>
 </section>
 
 <section>
   <header>
-    <h1>Verify the edX certificate using gpg on both OSX and Windows</h1>
+    <h1>Verificar o certificado da ESO usando gpg em ambos (Mac) OSX e Windows</h1>
   </header>
   <ul>
-    <li>Open up a new terminal on OSX or a command window on Windows</li>
-    <li>Go into the directory where the .sig and .pdf files are located</li>
-    <li>Run the following command to verify the fingerprint of the edx key</li>
+    <li>Abra o terminal no OSX ou o cmd no Windows</li>
+    <li>Vá até a pasta onde os arquivos .sig e .pdf estão</li>
+    <li>Execute o seguinte comando para verificar o "fingerprint" da chave ESO</li>
         <pre>gpg --verify {SIG_FILE} {PDF_FILE}</pre>
-    <li>Confirm that "Good signature from "edx &lt;info@edx.org&gt;" is reported by gpg</li>
+    <li>Veja se a frase: "Good signature from ESO &lt;info@eso.org.br&gt;" é impressa</li>
   </ul>
 </section>
   </section>
