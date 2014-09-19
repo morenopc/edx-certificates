@@ -651,7 +651,7 @@ class CertificateGen(object):
         paragraph_string = u"CÓDIGO DO CERTIFICADO DE HONRA<br/>" \
             "*A autenticidade deste certificado pode ser verificado em " \
             "<a href='{verify_url}/{verify_path}/{verify_uuid}/valid.html'>" \
-            "{verify_url}/{verify_path}/{verify_uuid}</a>"
+            "{verify_url}/{verify_path}/{verify_uuid}/valid.html</a>"
 
         paragraph_string = paragraph_string.format(
             verify_url=settings.CERT_VERIFY_URL,
